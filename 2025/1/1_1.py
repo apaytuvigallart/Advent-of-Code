@@ -3,9 +3,9 @@ password = 0
 
 with open("input.txt") as f:
     for line in f:
-        line = line.strip()
-        direction = line[0]
-        steps = int(line[1:])
+        direction, steps = line[0], int(line[1:])
+
+        # Calculate how many times it finishes at 0
         if direction == "R":
             dial = (dial + steps) % 100
         else:
